@@ -26,30 +26,34 @@
 		  </div>
 		  <div class="col-md-10">
 		  	<div class="row">
-		  		<div class="col-md-12 panel-warning">
+		  		<div class="col-md-12 panel-info">
 		  			<div class="content-box-header panel-heading">
-	  					<div class="panel-title ">Manage Slides</div>
+	  					<div class="panel-title ">Create New Slides</div>
 	  					<div class="panel-options">
-								<a href="<?php echo base_url()?>slides/add" data-rel="collapse"><span class="label label-success"><i class="glyphicon glyphicon-plus"></i> Add New Slides</span></a>								
+								<a href="<?php echo base_url()?>slides" data-rel="collapse"><span class="label label-success"><i class="glyphicon glyphicon-arrow-left"></i> back</span></a>								
 							</div>
 		  			</div>
 
 		  			<div class="content-box-large box-with-header">
 		  			<div class="row">
-		  			<div class="col-md-1 col-sm-1 col-xs-1">
-		  					<h1>#1</h1>
-		  				</div>
-		  				<div class="col-md-6 col-sm-6 col-xs-6">
+		  			<div class="col-md-6 col-sm-6 col-xs-6">
+		  					<form>		  					  
+		  					  <div class="form-group">
+		  					    <label for="exampleInputPassword1">Slide Caption</label>
+		  					  	<textarea class="form-control textarea" rows="5"></textarea>  
+		  					  </div>		  					  
+		  					  <div class="form-group">
+		  					    <label for="exampleInputFile">Image</label>
+		  					    <input type="file" id="exampleInputFile">
+		  					    <p class="help-block">Example block-level help text here.</p>
+		  					  </div>		  					  
+		  					  <button type="submit" class="btn btn-success">Submit</button>
+		  					</form>
+		  				</div>	
+		  			  <div class="col-md-6 col-sm-6 col-xs-6">
 		  					<p>Pellentesque luctus quam quis consequat vulputate. Sed sit amet diam ipsum. Praesent in pellentesque diam, sit amet dignissim erat. Aliquam erat volutpat. Aenean laoreet metus leo, laoreet feugiat enim suscipit quis. Praesent mauris mauris, ornare vitae tincidunt sed, hendrerit eget augue. Nam nec vestibulum nisi, eu dignissim nulla.
 								</p>
-		  				</div>
-		  				<div class="col-md-3 col-sm-3 col-xs-3">
-		  					<p>Pellentesque luctus quam quis consequat vulputate. Sed sit amet diam ipsum. Praesent in pellentesque diam, sit amet dignissim erat. Aliquam erat volutpat. Aenean laoreet metus leo, laoreet feugiat enim suscipit quis. Praesent mauris mauris, ornare vitae tincidunt sed, hendrerit eget augue. Nam nec vestibulum nisi, eu dignissim nulla.
-								</p>
-		  				</div>
-		  				<div class="col-md-2 col-sm-2 col-xs-2">
-		  					 <a href="#"><span class="label label-info">edit</span></a> <a href=""><span class="label label-danger">delete</span></a>	
-		  				</div>
+		  				</div>		  				
 		  			</div>			  			
 					</div>
 		  		</div>

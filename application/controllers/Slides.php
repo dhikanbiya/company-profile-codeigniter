@@ -14,9 +14,19 @@ class Slides extends CI_Controller {
 	}
 
 	public function index(){
-		if($this->ion_auth->logged_in()){
+		if($this->ion_auth->logged_in()){						
 			$this->load->view('layouts/backend/header');
 			$this->load->view('slides/index');
+			$this->load->view('layouts/backend/footer');
+		}else{
+			redirect('/','refresh');
+		}
+	}
+
+	public function add(){
+		if($this->ion_auth->logged_in()){
+			$this->load->view('layouts/backend/header');
+			$this->load->view('slides/create');
 			$this->load->view('layouts/backend/footer');
 		}else{
 			redirect('/','refresh');
