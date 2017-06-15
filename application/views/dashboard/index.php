@@ -7,8 +7,8 @@
 		  	<div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li class="current"><a href="index.html"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                    <li><a href="calendar.html"><i class="glyphicon glyphicon-picture"></i>Slides</a></li>
+                    <li class="current"><a href="<?php echo base_url()?>dashboard"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                    <li><a href="<?php echo base_url()?>slides"><i class="glyphicon glyphicon-picture"></i>Slides</a></li>
                     <li><a href="stats.html"><i class="glyphicon glyphicon-book"></i>Vision and Mission</a></li>
                     <li class="submenu">
                          <a href="#">
