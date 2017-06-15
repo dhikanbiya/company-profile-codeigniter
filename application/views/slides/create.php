@@ -37,14 +37,18 @@
 		  			<div class="content-box-large box-with-header">
 		  			<div class="row">
 		  			<div class="col-md-6 col-sm-6 col-xs-6">
-		  					<form>		  					  
+		  					<form>
+		  						<div class="form-group">
+		  						    <label for="title">Title</label>
+		  						    <input type="text" class="form-control" name="title" placeholder="Title">
+		  						  </div>		  					  
 		  					  <div class="form-group">
-		  					    <label for="exampleInputPassword1">Slide Caption</label>
-		  					  	<textarea class="form-control textarea" rows="5"></textarea>  
+		  					    <label for="desc">Slide Caption</label>
+		  					  	<textarea class="form-control textarea" rows="5" name="desc"></textarea>  
 		  					  </div>		  					  
 		  					  <div class="form-group">
-		  					    <label for="exampleInputFile">Image</label>
-		  					    <input type="file" id="exampleInputFile">
+		  					    <label for="image">Image</label>
+		  					    <input type="file"  name="image">
 		  					    <p class="help-block">Example block-level help text here.</p>
 		  					  </div>		  					  
 		  					  <button type="submit" class="btn btn-success">Submit</button>
