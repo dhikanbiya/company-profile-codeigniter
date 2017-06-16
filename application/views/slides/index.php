@@ -27,6 +27,7 @@
 		  </div>
 		  <div class="col-md-10">
 		  	<div class="row">
+		  		<div class="col-md-12"><h5 class="text-center text-danger"><?php echo $this->session->flashdata('message'); ?></h5></div>
 		  		<div class="col-md-12 panel-warning">
 		  			<div class="content-box-header panel-heading">
 	  					<div class="panel-title ">Manage Slides</div>
@@ -39,7 +40,7 @@
 		  			<?php $i = 1; ?>
 		  			<?php foreach($view as $v): ?>
 		  			<div class="row">
-		  			<h5><?php echo $this->session->flashdata('message'); ?></h5>
+		  			
 		  			<div class="col-md-1 col-sm-1 col-xs-1">
 		  					<h1>#<?php echo $i++?></h1>
 		  				</div>
@@ -51,7 +52,7 @@
 		  					<img src="<?php echo base_url().'assets/images/slides/'.$v->image;?>" class="img-responsive">
 		  				</div>
 		  				<div class="col-md-2 col-sm-2 col-xs-2">
-		  					 <a href="#"><span class="label label-info">edit</span></a> <a href=""><span class="label label-danger">delete</span></a>	
+		  					 <a href="#"><span class="label label-info">edit</span></a> <a href="<?php echo base_url().'slides/destroy/'.$v->slug;?>"><span class="label label-danger">delete</span></a>	
 		  				</div>
 		  			</div>
 		  			<?php endforeach ?>			  			

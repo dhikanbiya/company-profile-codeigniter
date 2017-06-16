@@ -79,9 +79,9 @@ class Slides extends CI_Controller {
 
 	public function destroy($slug){
 		$res = $this->slide_model->destroy($slug);
-		if($res){
+		if($res){			
+			$this->session->set_flashdata('message', 'deleted successfully');
 			redirect('slides');
-			$this->session->set_flashdata('message', 'delete successfully');
 		}else{
 			$this->session->set_flashdata('message', 'oops something is wrong');
 			redirect('slides');			    			
