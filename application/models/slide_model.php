@@ -11,6 +11,10 @@ class Slide_model extends CI_Model
 	}
 
 	public function insert($data){
-		
+		return $this->db->insert('slides', $data);
+	}
+
+	public function show_all(){
+		return $this->db->get('slides')->result();
 	}
 }

@@ -10,6 +10,7 @@
                     <li><a href="<?php echo base_url()?>dashboard"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                     <li class="current"><a href="<?php echo base_url()?>slides"><i class="glyphicon glyphicon-picture"></i>Slides</a></li>
                     <li><a href="stats.html"><i class="glyphicon glyphicon-book"></i>Vision and Mission</a></li>
+                    <li><a href="stats.html"><i class="glyphicon glyphicon-book"></i>About</a></li>
                     <li class="submenu">
                          <a href="#">
                             <i class="glyphicon glyphicon-list"></i> Products
@@ -35,22 +36,25 @@
 		  			</div>
 
 		  			<div class="content-box-large box-with-header">
+		  			<?php $i = 1; ?>
+		  			<?php foreach($view as $v): ?>
 		  			<div class="row">
+		  			<h5><?php echo $this->session->flashdata('message'); ?></h5>
 		  			<div class="col-md-1 col-sm-1 col-xs-1">
-		  					<h1>#1</h1>
+		  					<h1>#<?php echo $i++?></h1>
 		  				</div>
 		  				<div class="col-md-6 col-sm-6 col-xs-6">
-		  					<p>Pellentesque luctus quam quis consequat vulputate. Sed sit amet diam ipsum. Praesent in pellentesque diam, sit amet dignissim erat. Aliquam erat volutpat. Aenean laoreet metus leo, laoreet feugiat enim suscipit quis. Praesent mauris mauris, ornare vitae tincidunt sed, hendrerit eget augue. Nam nec vestibulum nisi, eu dignissim nulla.
-								</p>
+		  					<h5><span class="label label-success">title</span>  <?php echo $v->title;?></h5>
+		  					<p><span class="label label-warning">description</span> <?php echo $v->description;?></p>
 		  				</div>
 		  				<div class="col-md-3 col-sm-3 col-xs-3">
-		  					<p>Pellentesque luctus quam quis consequat vulputate. Sed sit amet diam ipsum. Praesent in pellentesque diam, sit amet dignissim erat. Aliquam erat volutpat. Aenean laoreet metus leo, laoreet feugiat enim suscipit quis. Praesent mauris mauris, ornare vitae tincidunt sed, hendrerit eget augue. Nam nec vestibulum nisi, eu dignissim nulla.
-								</p>
+		  					<img src="<?php echo base_url().'assets/images/slides/'.$v->image;?>" class="img-responsive">
 		  				</div>
 		  				<div class="col-md-2 col-sm-2 col-xs-2">
 		  					 <a href="#"><span class="label label-info">edit</span></a> <a href=""><span class="label label-danger">delete</span></a>	
 		  				</div>
-		  			</div>			  			
+		  			</div>
+		  			<?php endforeach ?>			  			
 					</div>
 		  		</div>
 		  	</div>
