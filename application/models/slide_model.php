@@ -17,4 +17,8 @@ class Slide_model extends CI_Model
 	public function show_all(){
 		return $this->db->get('slides')->result();
 	}
+
+	public function destroy($slug){
+		return $this->db->delete('slides', array('slug' => $slug));
+	}
 }
