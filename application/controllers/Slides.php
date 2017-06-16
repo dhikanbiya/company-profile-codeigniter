@@ -56,7 +56,7 @@ class Slides extends CI_Controller {
 	    						'link' => $this->input->post('link'),
 	    						'description' => $this->input->post('desc'),
 	    						'image' => $info['file_name'],
-	    						'slug' => url_title($this->input->post('title')),
+	    						'slug' => hash('sha256', $this->input->post('title')),
 	    						'created_at' => date('Y-m-d H:i:s')
 	    					 );
 
@@ -74,6 +74,17 @@ class Slides extends CI_Controller {
     	    	}
     		}
 	    }		
+		}
+	}
+
+	public function destroy($slug){
+		$res = $this->slide_model->destroy($slug);
+		if($res){
+			redirect('slides');
+			$this->session->set_flashdata('message', 'delete successfully');
+		}else{
+			$this->session->set_flashdata('message', 'oops something is wrong');
+			redirect('slides');			    			
 		}
 	}
 
