@@ -103,10 +103,11 @@ class Slides extends CI_Controller {
 			$this->form_validation->set_rules('userfile', 'Image', 'file_allowed_type[image]|file_image_mindim[1024,768]');
 			
 			$slug = $this->input->post('slug');
-
+			
 			 if ($this->form_validation->run() == FALSE){
-		    	$this->load->view('layouts/backend/header');
-					$this->load->view('slides/create');
+		    	$this->data['show'] = $this->slide_model->edit($slug);
+					$this->load->view('layouts/backend/header');
+					$this->load->view('slides/edit',$this->data);
 					$this->load->view('layouts/backend/footer');
 		    }else{
 		    	if($_FILES['userfile']['name']){

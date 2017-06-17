@@ -10,7 +10,7 @@
                     <li><a href="<?php echo base_url()?>dashboard"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                     <li class="current"><a href="<?php echo base_url()?>slides"><i class="glyphicon glyphicon-picture"></i>Slides</a></li>
                     <li><a href="stats.html"><i class="glyphicon glyphicon-book"></i>Vision and Mission</a></li>
-                    <li><a href="stats.html"><i class="glyphicon glyphicon-book"></i>About</a></li>
+                     <li><a href="<?php echo base_url().'post/about'?>"><i class="glyphicon glyphicon-book"></i>About</a></li>
                     <li class="submenu">
                          <a href="#">
                             <i class="glyphicon glyphicon-list"></i> Products
