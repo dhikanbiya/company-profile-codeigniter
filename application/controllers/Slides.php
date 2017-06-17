@@ -161,8 +161,14 @@ class Slides extends CI_Controller {
 	}
 
 	public function destroy($slug){
+		$image = $this->slide_model->edit($slug);
+		foreach ($image as $im){
+			$path = './assets/images/slides/'.$im->image;
+		}
+		
 		$res = $this->slide_model->destroy($slug);
 		if($res){			
+			unlink($path);
 			$this->session->set_flashdata('message', 'deleted successfully');
 			redirect('slides');
 		}else{
