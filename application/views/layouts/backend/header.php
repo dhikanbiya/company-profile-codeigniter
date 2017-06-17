@@ -37,11 +37,11 @@
 	            <ul class="nav navbar-nav navbar-right">	             
 	               <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">dhika <span class="caret"></span></a>
 	               <ul role="menu" class="dropdown-menu">
-	               		<li><a href="http://dki-sites.danbiya.net/profile/2/edit">change password</a></li> 
-	               		<li><a href="http://dki-sites.danbiya.net/manage">manage user</a></li>	               		
+	               		<li><a href="#">change password</a></li> 
+	               		<li><a href="#">manage user</a></li>	               		
 	               </ul>
 	              </li>
-	              <li><a href="http://dki-sites.danbiya.net/manage">logout</a></li>
+	              <li><a href="<?php echo base_url().'auth/logout'?>">logout</a></li>
 	            </ul>
 	          </div>
 	          <!--/.nav-collapse -->
