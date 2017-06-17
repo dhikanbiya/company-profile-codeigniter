@@ -92,6 +92,11 @@ class Auth extends CI_Controller {
 				'type' => 'password',
 			);
 
+			$this->data['csrf'] = array(
+	        'name' => $this->security->get_csrf_token_name(),
+	        'hash' => $this->security->get_csrf_hash()
+			);
+
 			$this->_render_page('auth/login', $this->data);
 		}
 	}

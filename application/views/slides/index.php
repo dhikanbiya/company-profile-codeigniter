@@ -52,7 +52,7 @@
 		  					<img src="<?php echo base_url().'assets/images/slides/'.$v->image;?>" class="img-responsive">
 		  				</div>
 		  				<div class="col-md-2 col-sm-2 col-xs-2">
-		  					 <a href="#"><span class="label label-info">edit</span></a> <a href="<?php echo base_url().'slides/destroy/'.$v->slug;?>"><span class="label label-danger">delete</span></a>	
+		  					 <a href="<?php echo base_url().'slides/edit/'.$v->slug?>"><span class="label label-info">edit</span></a> <a href="<?php echo base_url().'slides/destroy/'.$v->slug;?>"><span class="label label-danger">delete</span></a>	
 		  				</div>
 		  			</div>
 		  			<?php endforeach ?>			  			

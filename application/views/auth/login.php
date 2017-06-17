@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-md-2 col-md-offset-4">                       
             <?php echo form_open("auth/login", array('class'=>'login-form form-horizontal'));?>
-
+            <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
             <div class="form-group">
                 <?php echo lang('login_identity_label', 'identity');?>
                     <?php echo form_input($identity);?>
