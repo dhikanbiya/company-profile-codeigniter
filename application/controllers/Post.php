@@ -53,7 +53,7 @@ class Post extends CI_Controller {
 		    	$this->data['show'] = $this->post_model->edit($page);
 					$this->load->view('layouts/backend/header');
 					$this->load->view('post/edit',$this->data);
-					$this->load->view('layouts/backend/footer')
+					$this->load->view('layouts/backend/footer');
 		    }else{
 		    	if($_FILES['userfile']['name']){
 		    		$this->load->library('upload');

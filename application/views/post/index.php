@@ -9,8 +9,8 @@
                     <!-- Main menu -->
                     <li><a href="<?php echo base_url()?>dashboard"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                     <li><a href="<?php echo base_url()?>slides"><i class="glyphicon glyphicon-picture"></i>Slides</a></li>
-                    <li><a href="stats.html"><i class="glyphicon glyphicon-book"></i>Vision and Mission</a></li>
-                    <li class="current"><a href="<?php echo base_url().'post/about'?>"><i class="glyphicon glyphicon-book"></i>About</a></li>
+                    <li><a href="<?php echo base_url()?>post/page/vision"><i class="fa fa-paper-plane-o"></i>Vision and Mission</a></li>
+                    <li><a href="<?php echo base_url()?>post/page/about"><i class="glyphicon glyphicon-book"></i>About</a></li>
                     <li class="submenu">
                          <a href="#">
                             <i class="glyphicon glyphicon-list"></i> Products
@@ -30,7 +30,7 @@
 		  		<div class="col-md-12"><h5 class="text-center text-danger"><?php echo $this->session->flashdata('message'); ?></h5></div>
 		  		<div class="col-md-12 panel-warning">
 		  			<div class="content-box-header panel-heading">
-	  					<div class="panel-title ">Manage Pages</div>	  					
+	  					<div class="panel-title ">Manage Pages:: <b><?php echo $v->page;?></b></div>	  					
 		  			</div>
 
 		  			<div class="content-box-large box-with-header">
