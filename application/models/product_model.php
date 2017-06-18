@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Post_model extends CI_Model
+class Product_model extends CI_Model
 {
 	
 
@@ -18,9 +18,9 @@ class Post_model extends CI_Model
 		return $query = $this->db->get_where('posts', array('page' => $page))->result();
 	}
 
-	// public function destroy($slug){
-	// 	return $this->db->delete('posts', array('slug' => $slug));
-	// }
+	public function destroy($slug){
+		return $this->db->delete('posts', array('slug' => $slug));
+	}
 
 	public function edit($page){
 		return $query = $this->db->get_where('posts', array('page' => $page))->result();
