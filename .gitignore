@@ -12,6 +12,7 @@ application/config/database.php
 application/config/config.php
 
 assets/images/*
+assets/files/*
 
 
 composer.lock
