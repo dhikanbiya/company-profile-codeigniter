@@ -11,22 +11,26 @@ class Product_model extends CI_Model
 	}
 
 	public function insert($data){
-		return $this->db->insert('posts', $data);
+		return $this->db->insert('products', $data);
 	}
 
-	public function show($page){
-		return $query = $this->db->get_where('posts', array('page' => $page))->result();
+	public function show_all(){
+		return $query = $this->db->get('products')->result();
 	}
 
 	public function destroy($slug){
-		return $this->db->delete('posts', array('slug' => $slug));
+		return $this->db->delete('products', array('slug' => $slug));
 	}
 
-	public function edit($page){
-		return $query = $this->db->get_where('posts', array('page' => $page))->result();
+	public function edit($slug){
+		return $query = $this->db->get_where('products', array('slug' => $slug))->result();
 	}
 
-	public function update($data,$page){
-		return  $this->db->update('posts', $data, array('page' => $page));
+	public function update($data,$slug){
+		return  $this->db->update('products', $data, array('slug' => $slug));
+	}
+
+	public function get_category(){
+		return $this->db->get('categories')->result();
 	}
 }

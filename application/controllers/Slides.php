@@ -46,7 +46,7 @@ class Slides extends CI_Controller {
 
 		 if ($this->form_validation->run() == FALSE){
 	    	$this->load->view('layouts/backend/header');
-				$this->load->view('slides/create');
+				$this->load->view('slides/create',$this->data);
 				$this->load->view('layouts/backend/footer');
 	    }
 	    else{	
