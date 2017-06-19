@@ -1,29 +1,4 @@
-	
-    <div class="page-content">
-    	<div class="row">
-		  <div class="col-md-2">
-		  	<div class="sidebar content-box" style="display: block;">
-                <ul class="nav">
-                    <!-- Main menu -->
-                    <li><a href="<?php echo base_url()?>dashboard"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                    <li><a href="<?php echo base_url()?>slides"><i class="glyphicon glyphicon-picture"></i>Slides</a></li>
-                    <li><a href="<?php echo base_url()?>post/page/vision"><i class="fa fa-paper-plane-o"></i>Vision and Mission</a></li>
-                    <li><a href="<?php echo base_url()?>post/page/about"><i class="glyphicon glyphicon-book"></i>About</a></li></li>
-                    <li class="submenu current">
-                         <a href="#">
-                            <i class="glyphicon glyphicon-list"></i> Products
-                            <span class="caret pull-right"></span>
-                         </a>
-                         <!-- Sub menu -->
-                         <ul>
-                            <li><a href="login.html">Category</a></li>
-                            <li><a href="signup.html">Create New Products</a></li>
-                        </ul>
-                    </li>
-                </ul>
-             </div>
-		  </div>
-		  <div class="col-md-10">
+			  <div class="col-md-10">
 		  	<div class="row">
 		  		<div class="col-md-12"><h5 class="text-center text-danger"><?php echo $this->session->flashdata('message'); ?></h5></div>
 		  		<div class="col-md-12 panel-warning">
@@ -45,7 +20,7 @@
 		  				<div class="col-md-6 col-sm-6 col-xs-6">
 		  					<h4><span class="label label-success">Title</span>  <?php echo $v->title;?></h4>
 		  					<h5><span class="label label-info">Category</span>  <?php echo $v->category_id;?></h5>
-		  					<h5><span class="label label-danger"><?php echo ($v->link ? 'Link' : 'File'); ?></span>  <?php echo ($v->link ? $v->link : $v->file_link);?></h5>
+		  					<h5><span class="label label-danger"><?php echo (!empty($v->file_link) ? 'File' : 'Link'); ?></span>  <?php echo (!empty($v->file_link) ? $v->file_link : $v->link);?></h5>
 		  					<p><span class="label label-warning">description</span> <?php echo $v->description;?></p>
 		  				</div>		  
 		  				<div class="col-md-3 col-sm-3 col-xs-3">

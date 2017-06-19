@@ -51,3 +51,4 @@
 
 	    </div>   
 			</div>
+			<?php $this->load->view('layouts/backend/sidebar'); ?>

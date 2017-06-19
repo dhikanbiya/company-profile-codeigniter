@@ -1,30 +1,4 @@
-
-
-<?php foreach($show as $sh): ?>
-    <div class="page-content">
-    	<div class="row">
-		  <div class="col-md-2">
-		  	<div class="sidebar content-box" style="display: block;">
-                <ul class="nav">
-                    <!-- Main menu -->
-                    <li><a href="<?php echo base_url()?>dashboard"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                    <li class="current"><a href="<?php echo base_url()?>slides"><i class="glyphicon glyphicon-picture"></i>Slides</a></li>
-                    <li><a href="<?php echo base_url()?>post/page/vision"><i class="fa fa-paper-plane-o"></i>Vision and Mission</a></li>
-                    <li><a href="<?php echo base_url()?>post/pages/about"><i class="glyphicon glyphicon-book"></i>About</a></li></li>
-                    <li class="submenu">
-                         <a href="#">
-                            <i class="glyphicon glyphicon-list"></i> Products
-                            <span class="caret pull-right"></span>
-                         </a>
-                         <!-- Sub menu -->
-                         <ul>
-                            <li><a href="login.html">Category</a></li>
-                            <li><a href="signup.html">Create New Products</a></li>
-                        </ul>
-                    </li>
-                </ul>
-             </div>
-		  </div>
+<?php foreach($show as $sh): ?>   
 		  <div class="col-md-10">
 		  	<div class="row">
 		  		<div class="col-md-12 panel-info">
