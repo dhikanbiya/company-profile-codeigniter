@@ -20,16 +20,11 @@ class Home extends CI_Controller {
 	}
 
 	public function index(){
-		if($this->ion_auth->logged_in()){
-			$this->data['user'] = $this->ion_auth->user()->row();
-			$id = $this->data['user']->id;
-			$this->data['ulist'] = $this->dashboard_model->get_users($id);			
-			$this->load->view('layouts/backend/header');
-			$this->load->view('dashboard/index',$this->data);
-			$this->load->view('layouts/backend/footer');
-		}else{
-			redirect('/','refresh');
-		}
+			
+			$this->load->view('layouts/frontend/header');
+			$this->load->view('home/index',$this->data);
+			$this->load->view('layouts/frontend/footer');
+	
 	}
 
 	public function update(){
