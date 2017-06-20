@@ -50,7 +50,7 @@ class Slides extends CI_Controller {
 				$this->load->view('layouts/backend/footer');
 	    }
 	    else{	
-    		if($_FILES['userfile']['name']){
+    		if(!empty($_FILES['userfile']['name'])){
     	     	$this->load->library('upload');
     	     	if($this->upload->do_upload('userfile')){		     		     		
     	     			$info = $this->upload->data();
@@ -110,7 +110,7 @@ class Slides extends CI_Controller {
 					$this->load->view('slides/edit',$this->data);
 					$this->load->view('layouts/backend/footer');
 		    }else{
-		    	if($_FILES['userfile']['name']){
+		    	if(!empty($_FILES['userfile']['name'])){
 		    		$this->load->library('upload');
 		    		if($this->upload->do_upload('userfile')){	
     	     			$info = $this->upload->data();
