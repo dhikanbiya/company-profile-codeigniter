@@ -45,7 +45,7 @@ class Post extends CI_Controller {
 			$user = $this->ion_auth->user()->row();			
 			$this->form_validation->set_rules('section_one', 'Section One', 'required');
 			$this->form_validation->set_rules('section_two', 'Section Two', 'required');
-			$this->form_validation->set_rules('userfile', 'Image', 'file_allowed_type[image]|file_image_mindim[1024,768]');
+			$this->form_validation->set_rules('userfile', 'Image', 'file_allowed_type[image]|file_image_mindim[300,300]');
 			
 			$page = $this->input->post('page');
 			$uri = 'post/page/'.$page;			
