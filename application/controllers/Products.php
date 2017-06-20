@@ -5,7 +5,7 @@ class Products extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library(array('ion_auth','form_validation'));
+		$this->load->library(array('ion_auth','form_validation','pagination'));
 		$this->load->model('product_model');		
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));			
 		$this->data['csrf'] = array(
@@ -16,7 +16,37 @@ class Products extends CI_Controller {
 
 	public function index(){
 		if($this->ion_auth->logged_in()){		
-			$this->data['view'] = $this->product_model->show_all();				
+
+			$config = array();
+      $config["base_url"] = base_url() . "products/index/";
+      $config["total_rows"] = $this->product_model->record_count();
+      $config["per_page"] = 3;
+      $config["uri_segment"] = 3;
+
+      // bootstrap styling
+      $config['full_tag_open'] = "<ul class='pagination pagination-sm' style='position:relative; top:-25px;'>";
+	     $config['full_tag_close'] ="</ul>";
+	     $config['num_tag_open'] = '<li>';
+	     $config['num_tag_close'] = '</li>';
+	     $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+	     $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+	     $config['next_tag_open'] = "<li>";
+	     $config['next_tagl_close'] = "</li>";
+	     $config['prev_tag_open'] = "<li>";
+	     $config['prev_tagl_close'] = "</li>";
+	     $config['first_tag_open'] = "<li>";
+	     $config['first_tagl_close'] = "</li>";
+	     $config['last_tag_open'] = "<li>";
+	     $config['last_tagl_close'] = "</li>";
+
+      $this->pagination->initialize($config);
+
+      $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+      $this->data["view"] = $this->product_model->fetch_products($config["per_page"], $page);
+      $this->data["links"] = $this->pagination->create_links();
+
+			$this->data['num'] = $this->uri->segment('3') + 1;
+
 			$this->load->view('layouts/backend/header');
 			$this->load->view('products/index',$this->data);
 			$this->load->view('layouts/backend/footer');

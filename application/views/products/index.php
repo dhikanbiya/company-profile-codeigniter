@@ -15,7 +15,7 @@
 		  			<div class="row">
 		  			
 		  			<div class="col-md-1 col-sm-1 col-xs-1">
-		  					<h1>#<?php echo $i++?></h1>
+		  					<h1>#<?php echo $num++?></h1>
 		  				</div>
 		  				<div class="col-md-6 col-sm-6 col-xs-6">
 		  					<h4><span class="label label-success">Title</span>  <?php echo $v->title;?></h4>
@@ -31,8 +31,11 @@
 		  				</div>
 		  			</div>
 		  			<?php endforeach ?>			  			
+		  			<?php echo $links;?>
 					</div>
+
 		  		</div>
+		  		
 		  	</div>
 
 		  	
