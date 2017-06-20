@@ -40,7 +40,7 @@ class Products extends CI_Controller {
 		if($this->ion_auth->logged_in()){
 			$user = $this->ion_auth->user()->row();
 			$this->form_validation->set_rules('title', 'Title', 'required');
-			$this->form_validation->set_rules('link', 'Link');
+			$this->form_validation->set_rules('link', 'Link', 'valid_url');
 			$this->form_validation->set_rules('desc', 'Description', 'required');
 			$this->form_validation->set_rules('userfile', 'Image', 'file_required|file_allowed_type[image]|file_image_mindim[100,100]');
 			$this->form_validation->set_rules('file', 'File', 'file_allowed_type[pdf]');
@@ -122,7 +122,7 @@ class Products extends CI_Controller {
 		if($this->ion_auth->logged_in()){
 				$user = $this->ion_auth->user()->row();
 				$this->form_validation->set_rules('title', 'Title', 'required');
-				$this->form_validation->set_rules('link', 'Link');
+				$this->form_validation->set_rules('link', 'Link', 'valid_url');
 				$this->form_validation->set_rules('desc', 'Description', 'required');
 				$this->form_validation->set_rules('userfile', 'Image', 'file_allowed_type[image]|file_image_mindim[100,100]');
 				$this->form_validation->set_rules('file', 'File', 'file_allowed_type[pdf]');

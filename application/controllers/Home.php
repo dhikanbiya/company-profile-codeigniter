@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Home extends CI_Controller {
 
 	public function __construct()
 	{
@@ -15,7 +15,7 @@ class Dashboard extends CI_Controller {
 	        'name' => $this->security->get_csrf_token_name(),
 	        'hash' => $this->security->get_csrf_hash()
 			);
-			$this->load->model('dashboard_model');
+			$this->load->model('home_model');
 			$this->data['user'] = $this->ion_auth->user()->row();
 	}
 
