@@ -203,6 +203,7 @@ class Auth extends CI_Controller {
 			// setup the input
 			$this->data['identity'] = array('name' => 'identity',
 				'id' => 'identity',
+				'class' => 'form-control'
 			);
 
 			if ( $this->config->item('identity', 'ion_auth') != 'email' ){
@@ -283,11 +284,13 @@ class Auth extends CI_Controller {
 					'name' => 'new',
 					'id'   => 'new',
 					'type' => 'password',
+					'class' => 'form-control',
 					'pattern' => '^.{'.$this->data['min_password_length'].'}.*$',
 				);
 				$this->data['new_password_confirm'] = array(
 					'name'    => 'new_confirm',
 					'id'      => 'new_confirm',
+					'class' => 'form-control',
 					'type'    => 'password',
 					'pattern' => '^.{'.$this->data['min_password_length'].'}.*$',
 				);
