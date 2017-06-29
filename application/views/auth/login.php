@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/gplaypattern.png'); color: transparent;">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,44 +12,60 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <style type="text/css">
+        html,body{
+            background: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/gplaypattern.png');
+        }
+        #logo{
+            height: 170px;
+            width: auto; 
+            margin: 0px auto;  
+            clip-path: circle(85px at center);
+            margin-top: 30px;
+        }
+    </style>
 
 </head>
-<body style="background-color: none;">
-    <div id="main" style="margin-top: 100px; padding: 30px;">
-    <div class="text-center">      
-      <h1><?php echo lang('login_heading');?></h1>
-      <div id="infoMessage"><?php echo $message;?></div>     
-    </div>
-    <div class="row">
-        <div class="col-md-2 col-md-offset-4">                       
-            <?php echo form_open("auth/login", array('class'=>'login-form form-horizontal'));?>
-            <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-            <div class="form-group">
-                <?php echo lang('login_identity_label', 'identity');?>
-                    <?php echo form_input($identity);?>
-            </div>
-            <div class="form-group">
-                <?php echo lang('login_password_label', 'password');?>
-                <?php echo form_input($password);?>
-            </div>
-            <div class="form-group">
-                <?php echo lang('login_remember_label', 'remember');?>
-                <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-            </div>
+<body">
+    <div class="container">    
+        <div class="row">  
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <p><img src="<?php echo base_url();?>assets/images/pp.jpeg" class="img-responsive" id="logo"></p>
+            </div>    
+            <div class="col-md-3 col-md-offset-3">
+              <h3><?php echo lang('login_heading');?></h3>
+              <p>Please login with a valid credentials</p>
+              <p><?php echo $message;?></p>
+            </div>  
+            <div class="col-md-3 col-xs-12 col-sm-12"> 
+                <div style="padding: 15px;">
+                    <?php echo form_open("auth/login", array('class'=>'login-form form-horizontal'));?>
+                    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                    <div class="form-group">
+                        <?php echo lang('login_identity_label', 'identity');?>
+                            <?php echo form_input($identity);?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo lang('login_password_label', 'password');?>
+                        <?php echo form_input($password);?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo lang('login_remember_label', 'remember');?>
+                        <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
+                    </div>
 
-            <div class="form-group">
-                <?php echo form_submit('submit', lang('login_submit_btn'),'class="btn btn-success"');?>
-                 <a href="forgot_password" class="pull-right"><?php echo lang('login_forgot_password');?></a>
-            </div>
+                    <div class="form-group">
+                        <?php echo form_submit('submit', lang('login_submit_btn'),'class="btn btn-success"');?>
+                         <a href="forgot_password" class="pull-right"><?php echo lang('login_forgot_password');?></a>
+                    </div>
 
-            <?php echo form_close();?>           
+                    <?php echo form_close();?>  
+                </div>     
+            </div>            
         </div>
-        <div class="col-md-3 col visible-md visible-lg">
-          <img src="https://static1.squarespace.com/static/54fe5d59e4b038fd96c9a7c5/550a1fa1e4b0fca40dc6f6b1/550a1fa3e4b03c7ec20696a1/1426726819527/Placeholder+Logo.png?format=300w" class="img-responsive" style="height: 170px; width: auto;">
-        </div>
-    </div>
       
     </div>
+
 
 
     </body>

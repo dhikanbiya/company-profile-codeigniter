@@ -39,8 +39,9 @@ class Auth extends CI_Controller {
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
-
+			$this->load->view('layouts/backend/header');
 			$this->_render_page('auth/index', $this->data);
+			$this->load->view('layouts/backend/footer');
 		}
 	}
 
@@ -477,35 +478,41 @@ class Auth extends CI_Controller {
                 'name'  => 'first_name',
                 'id'    => 'first_name',
                 'type'  => 'text',
+                'class' => 'form-control',
                 'value' => $this->form_validation->set_value('first_name'),
             );
             $this->data['last_name'] = array(
                 'name'  => 'last_name',
                 'id'    => 'last_name',
                 'type'  => 'text',
+                'class' => 'form-control',
                 'value' => $this->form_validation->set_value('last_name'),
             );
             $this->data['identity'] = array(
                 'name'  => 'identity',
                 'id'    => 'identity',
+                'class' => 'form-control',
                 'type'  => 'text',
                 'value' => $this->form_validation->set_value('identity'),
             );
             $this->data['email'] = array(
                 'name'  => 'email',
                 'id'    => 'email',
+                'class' => 'form-control',
                 'type'  => 'text',
                 'value' => $this->form_validation->set_value('email'),
             );
             $this->data['company'] = array(
                 'name'  => 'company',
                 'id'    => 'company',
+                'class' => 'form-control',
                 'type'  => 'text',
                 'value' => $this->form_validation->set_value('company'),
             );
             $this->data['phone'] = array(
                 'name'  => 'phone',
                 'id'    => 'phone',
+                'class' => 'form-control',
                 'type'  => 'text',
                 'value' => $this->form_validation->set_value('phone'),
             );
@@ -513,16 +520,19 @@ class Auth extends CI_Controller {
                 'name'  => 'password',
                 'id'    => 'password',
                 'type'  => 'password',
+                'class' => 'form-control',
                 'value' => $this->form_validation->set_value('password'),
             );
             $this->data['password_confirm'] = array(
                 'name'  => 'password_confirm',
                 'id'    => 'password_confirm',
                 'type'  => 'password',
+                'class' => 'form-control',
                 'value' => $this->form_validation->set_value('password_confirm'),
             );
-
+            $this->load->view('layouts/backend/header');
             $this->_render_page('auth/create_user', $this->data);
+            $this->load->view('layouts/backend/footer');
         }
     }
 
@@ -642,39 +652,46 @@ class Auth extends CI_Controller {
 		$this->data['first_name'] = array(
 			'name'  => 'first_name',
 			'id'    => 'first_name',
+			'class' => 'form-control',
 			'type'  => 'text',
 			'value' => $this->form_validation->set_value('first_name', $user->first_name),
 		);
 		$this->data['last_name'] = array(
 			'name'  => 'last_name',
 			'id'    => 'last_name',
+			'class' => 'form-control',
 			'type'  => 'text',
 			'value' => $this->form_validation->set_value('last_name', $user->last_name),
 		);
 		$this->data['company'] = array(
 			'name'  => 'company',
 			'id'    => 'company',
+			'class' => 'form-control',
 			'type'  => 'text',
 			'value' => $this->form_validation->set_value('company', $user->company),
 		);
 		$this->data['phone'] = array(
 			'name'  => 'phone',
 			'id'    => 'phone',
+			'class' => 'form-control',
 			'type'  => 'text',
 			'value' => $this->form_validation->set_value('phone', $user->phone),
 		);
 		$this->data['password'] = array(
 			'name' => 'password',
 			'id'   => 'password',
+			'class' => 'form-control',
 			'type' => 'password'
 		);
 		$this->data['password_confirm'] = array(
 			'name' => 'password_confirm',
 			'id'   => 'password_confirm',
+			'class' => 'form-control',
 			'type' => 'password'
 		);
-
+		$this->load->view('layouts/backend/header');
 		$this->_render_page('auth/edit_user', $this->data);
+		$this->load->view('layouts/backend/footer');
 	}
 
 	// create a new group
