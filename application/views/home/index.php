@@ -5,7 +5,7 @@
                <div class="carousel-inner" role="listbox">
                   <?php foreach($slides as $sl):?>  
                   <div class="item">
-                     <img src="http://dki-sites.danbiya.net/slides/xtwny0QKku9471pzrXGOT11ZXIW7aFr11t34yWCN.jpeg" data-color="lightblue" alt="First Image">
+                     <img src="<?php echo base_url().'assets/images/slides/'.$sl->image; ?>" data-color="lightblue" alt="First Image">
                      <div class="carousel-caption">
                         <h1><?php echo $sl->title;?> </h1>
                         <p class="intro-text"><?php echo $sl->description?></p>
@@ -135,7 +135,7 @@
              <hr>
              <div class="col-md-12">
                <p class="text-center">
-                 Fixie flexitarian irony yr bitters occupy schlitz, kale chips tbh you probably haven't heard of them normcore hexagon locavore copper mug. 
+                 For further information feel free to contact us. 
                </p><br><br>
              </div>                  
              <div class="col-md-12">
