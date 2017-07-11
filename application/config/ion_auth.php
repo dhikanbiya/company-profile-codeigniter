@@ -125,10 +125,10 @@ $config['identity_cookie_name'] = 'identity';
 $config['use_ci_email'] = TRUE; // Send Email using the builtin CI email class, if false it will return the code and the identity
 $config['email_config'] = array(	
 	'protocol' => 'smtp',
-  'smtp_host' => 'mail.dk-internusa.co.id',
+  'smtp_host' => '',
   'smtp_port' => 25,
-  'smtp_user' => 'reset@dk-internusa.co.id',
-  'smtp_pass' => 'serena#gg',
+  'smtp_user' => '',
+  'smtp_pass' => '',
   'mailtype'  => 'html', 
   'charset'   => 'iso-8859-1'
 );
